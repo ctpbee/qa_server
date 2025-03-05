@@ -6,9 +6,9 @@ from dataclasses import dataclass
 
 
 @dataclass
-class QifiAccount:
+class QiFiAccount:
     user_id = ""
-    currenty: str = ""
+    currency: str = ""
     pre_balance: float = ""
     deposit: float = 0.0
     withdraw: float = 0.0
@@ -27,16 +27,16 @@ class QifiAccount:
 
 
 @dataclass
-class QifiBankDetail:
+class QiFiBankDetail:
     id: str = ""
     name: str = ""
-    bank_ccount: str = ""
+    bank_account: str = ""
     fetch_amount: float = 0
     qry_count: int = 0
 
 
 @dataclass
-class QifiOrder:
+class QiFiOrder:
     seqno: int = 0
     user_id: str = ""
     order_id: str = ""
@@ -57,7 +57,7 @@ class QifiOrder:
 
 
 @dataclass
-class Position:
+class QiFiPosition:
     user_id: str = ""
     exchange_id: str = ""
     instrument_id: str = ""
@@ -100,7 +100,7 @@ class Position:
 
 
 @dataclass
-class QifiTrade:
+class QiFiTrade:
     seqno: int = 0
     user_id: str = ""
     trade_id: str = ""
@@ -117,7 +117,7 @@ class QifiTrade:
 
 
 @dataclass
-class QifiTransfer:
+class QiFiTransfer:
     datetime: int = 0
     currency: str = ""
     amount: float = 0
@@ -125,7 +125,7 @@ class QifiTransfer:
     error_msg: str = ""
 
 
-class QifiProtocol:
+class QiFiProtocol:
     def __init__(self, **kwargs):
         self.databaseip: str = "127.0.0.1"
         self.account_cookie: str = "ctpbee"
@@ -146,7 +146,7 @@ class QifiProtocol:
         self.bankname: str = ""
         self.trading_day: str = ""
         self.status: str = ""
-        self.accounts: QifiAccount = QifiAccount()
+        self.accounts: QiFiAccount = QiFiAccount()
         self.banks = dict()
         self.event: dict = dict()
         self.orders = OrderedDict()
